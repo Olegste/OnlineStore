@@ -3,6 +3,13 @@
 	<div class="login-container">
 		<div id="login-box">
 			<h2>Login with Username and Password</h2>
+			<p>
+				<strong>Administrator page - login:admin, password:admin</strong>
+			</p>
+			<p>
+				<strong>User page - login:OlegStefaniv, password:0000aaaa, or
+					register</strong>
+			</p>
 
 			<c:if test="${not empty msg}">
 				<div class="msg" style="color: ff0000">${msg}</div>
