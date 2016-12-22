@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
+
+	<var name="order" class="com.onlinestore.model.CustomerOrder" />
+
+	<!-- requestParameters.cartId is parameter in CustomerOrder controller "redirect:/checkout?cartId" -->
+	<action-state id="addCartToOrder">
+		<evaluate expression="cartDaoImpl.validate(requestParameters.cartId)"
+			result="order.cart" />
+		<!-- if exception transfer to InvalidCartWarning -->
+		<transition to="InvalidCartWarning" on-exception="java.io.IOException" />
+		<!-- if normal transfer to collectCustomerInfo -->
+		<transition to="collectCustomerInfo" />
+	</action-state>
+
+	<view-state id="collectCustomerInfo" view="collectCustomerInfo.jsp"
+		model="order">
+		<transition on="customerInfoCollected" to="collectShippingDetail" />
+		<transition on="backToCollectCustomerInfo" to="collectCustomerInfo" />
+	</view-state>
+
+	<view-state id="collectShippingDetail" view="collectShippingDetail.jsp"
+		model="order">
+		<transition on="shippingDetailCollected" to="orderConfirmation" />
+	</view-state>
+
+	<view-state id="orderConfirmation">
+		<transition on="orderConfirmed" to="processOrder" />
+		<transition on="backToCollectShippingDetail" to="collectShippingDetail" />
+	</view-state>
+
+	<!-- when order processed all item remove from cart -->
+	<action-state id="processOrder">
+		<evaluate expression="cartItemDaoImpl.removeAllCartItems(order.cart)" />
+		<transition to="thankCustomer" />
+	</action-state>
+
+	<view-state id="thankCustomer" model="order">
+		<transition to="endState" />
+	</view-state>
+
+	<end-state id="endState" />
+
+	<view-state id="InvalidCartWarning">
+		<transition to="endState" />
+	</view-state>
+
+	<end-state id="cancelCheckout" view="checkOutCancelled.jsp" />
+
+	<global-transitions>
+		<transition on="cancel" to="cancelCheckout" />
+	</global-transitions>
+</flow>
