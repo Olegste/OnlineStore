@@ -1,14 +1,16 @@
 <!-- FOOTER -->
 <!-- Main CSS -->
-<footer style="padding-top: 150px">
-	<p class="pull-right">
-		<a href="#">Back to top</a>
-	</p>
+<footer style="padding-top: 50px">
+	<div class="container">
+		<p class="pull-right">
+			<a href="#">Back to top</a>
+		</p>
 
-	<p>
-		&copy; 2016 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a
-			href="#">Terms</a>
-	</p>
+		<p>
+			&copy; 2015 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a
+				href="#">Terms</a>
+		</p>
+	</div>
 </footer>
 </div>
 </div>
@@ -20,6 +22,8 @@
 <%--<script>window.jQuery ||--%>
 <%--document.write('<script src="<c:url value="/resources/js/jquery-1.11.3.min.js" />"><\/script>')</script>--%>
 <script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
+<!--main js-->
+<script src="<c:url value="/resources/js/main.js" />"></script>
 
 </body>
 </html>

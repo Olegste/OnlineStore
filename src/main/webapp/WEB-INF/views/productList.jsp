@@ -7,7 +7,7 @@
 		var searchCondition = '${searchCondition}';
 
 		$('.table').DataTable({
-			"lengthMenu" : [ [ 3, 5, 10, -1 ], [ 3, 5, 10, "All" ] ],
+			"lengthMenu" : [ [ 5, 10, 50, -1 ], [ 5, 10, 50, "All" ] ],
 			"oSearch" : {
 				"sSearch" : searchCondition
 			}
@@ -49,4 +49,6 @@
 				</tr>
 			</c:forEach>
 		</table>
+	</div>
+</div>
 <%@include file="/WEB-INF/views/template/footer.jsp"%>

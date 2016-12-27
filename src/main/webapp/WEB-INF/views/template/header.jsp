@@ -25,7 +25,7 @@
 <%--Data Table--%>
 <script type="text/javascript"
 	src="https://cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
-
+<script src="<c:url value="/resources/js/main.js" />"></script>
 <!-- Bootstrap core CSS -->
 <link href="<c:url value="/resources/css/bootstrap.min.css" />"
 	rel="stylesheet">
