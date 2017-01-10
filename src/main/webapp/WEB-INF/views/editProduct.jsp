@@ -10,7 +10,6 @@
 			<p class="lead">Please update the product information here:</p>
 		</div>
 
-		<!-- In action we call method edit product from HomeController where RequestMethod declared as post -->
 		<form:form
 			action="${pageContext.request.contextPath}/admin/product/editProduct"
 			method="post" commandName="product" enctype="multipart/form-data">

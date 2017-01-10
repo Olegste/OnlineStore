@@ -9,8 +9,6 @@
 
 			<p class="lead">Fill the below information to add a product:</p>
 		</div>
-		<!--commandName="product" send to addProductPost controller 
-		to annotation @ModelAttribute("product")Product product and  create new product from form.-->
 		<form:form
 			action="${pageContext.request.contextPath}/admin/product/addProduct"
 			method="post" commandName="product" enctype="multipart/form-data">

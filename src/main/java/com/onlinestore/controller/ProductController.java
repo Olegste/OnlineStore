@@ -23,18 +23,11 @@ public class ProductController {
 	@RequestMapping("/productList/all")
 	public String getProducts(Model model) {
 		List<Product> products = productService.getProductList();
-		// use products in view to use productList
 		model.addAttribute("products", products);
 		return "productList";
 	}
 
 	@RequestMapping("/viewProduct/{productId}")
-	// @PathVariable, указывающая на то, что данный параметр получается из
-	// адресной строки Имя переменной не обязательно должно совпадать с тем, как
-	// оно обозначено в @RequestMapping. Поэтому указывается @PathVariable(value
-	// = "id"). Это позволяет очевидным образом использовать несколько
-	// параметров в одной адресной строке, например, @RequestMapping(value =
-	// "users/{userId}/pages/{pageId}").
 	public String viewProduct(@PathVariable(value = "productId") int productId, Model model) throws IOException {
 		Product product = productService.getProductById(productId);
 		model.addAttribute("product", product);

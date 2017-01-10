@@ -18,7 +18,6 @@ public class CartItem implements Serializable {
 	@GeneratedValue
 	private int cartItemId;
 
-	// Many cart items and one cart
 	@ManyToOne
 	@JoinColumn(name = "cartId")
 	@JsonIgnore
@@ -28,7 +27,6 @@ public class CartItem implements Serializable {
 	@JoinColumn(name = "productId")
 	private Product product;
 
-	// quantity of product add to the cart
 	private int quantity;
 	private double totalPrice;
 

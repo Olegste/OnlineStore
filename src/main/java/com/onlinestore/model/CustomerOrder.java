@@ -3,8 +3,6 @@ package com.onlinestore.model;
 import javax.persistence.*;
 import java.io.Serializable;
 
-
-
 @Entity
 public class CustomerOrder implements Serializable {
 
@@ -14,12 +12,10 @@ public class CustomerOrder implements Serializable {
 	@GeneratedValue
 	private int customerOrderId;
 
-	// one order to one cart
 	@OneToOne
 	@JoinColumn(name = "cartId")
 	private Cart cart;
 
-	// one customer have one order
 	@OneToOne
 	@JoinColumn(name = "customerId")
 	private Customer customer;

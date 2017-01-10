@@ -23,8 +23,6 @@ import com.onlinestore.service.CartService;
 import com.onlinestore.service.CustomerService;
 import com.onlinestore.service.ProductService;
 
-//rest service use http request get,put,post,delete
-//rest service use to update page without change url 
 
 @Controller
 @RequestMapping("/rest/cart")
@@ -42,18 +40,12 @@ public class CartResources {
 	@Autowired
 	private ProductService productService;
 
-	// Method to refresh cart
-	// ResponseBody send information direct to browser,no need call method in
-	// view
+	//refresh cart
 	@RequestMapping("/{cartId}")
 	public @ResponseBody Cart getCartById(@PathVariable(value = "cartId") int cartId) {
 		return cartService.getCartById(cartId);
 	}
 
-	// we no use post method because cart can already contain some product and
-	// this method only update count
-	// Will resolve the CustomUser argument using Authentication.getPrincipal()
-	// from the SecurityContextHolder.
 	@RequestMapping(value = "/add/{productId}", method = RequestMethod.PUT)
 	@ResponseStatus(value = HttpStatus.NO_CONTENT)
 	public void addItem(@PathVariable(value = "productId") int productId, @AuthenticationPrincipal User activeUser) {
@@ -63,7 +55,7 @@ public class CartResources {
 		Product product = productService.getProductById(productId);
 		List<CartItem> cartItems = cart.getCartItems();
 
-		// check if product already exist in cat
+		// check if product already exist in cart
 		// if product exist increase count
 		for (int i = 0; i < cartItems.size(); i++) {
 			if (product.getProductId() == cartItems.get(i).getProduct().getProductId()) {
@@ -76,7 +68,7 @@ public class CartResources {
 				return;
 			}
 		}
-		// if product no exist in the cart create new product
+		// if product no exist in the cart,create new product
 		CartItem cartItem = new CartItem();
 		cartItem.setProduct(product);
 		cartItem.setQuantity(1);

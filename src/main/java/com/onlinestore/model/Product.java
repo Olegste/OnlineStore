@@ -18,14 +18,11 @@ import org.springframework.web.multipart.MultipartFile;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-// to use webflow we need all model to do serializable
 public class Product implements Serializable {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -3532377236419382983L;
-	// primary key
-	// tell system that we create new instance and generate ID
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int productId;
@@ -39,11 +36,9 @@ public class Product implements Serializable {
 	private int unitInStock;
 	private String productManufacturer;
 
-	// !!!//
 	@Transient
 	private MultipartFile productImage;
 
-	// !!!//
 	@OneToMany(mappedBy = "product", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JsonIgnore
 	private List<CartItem> cartItemList;
