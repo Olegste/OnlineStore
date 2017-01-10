@@ -10,7 +10,7 @@
 <meta name="author" content="">
 <link rel="icon" href="../../favicon.ico">
 
-<title>Electronics Shop</title>
+<title>Online Store</title>
 
 <!-- Angular JS -->
 <script
@@ -59,8 +59,8 @@
 								class="icon-bar"></span> <span class="icon-bar"></span> <span
 								class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="<c:url value="/" /> ">Electronics
-							Shop</a>
+						<a class="navbar-brand" href="<c:url value="/" /> ">Online
+							Store</a>
 					</div>
 					<div id="navbar" class="navbar-collapse collapse">
 						<ul class="nav navbar-nav">

@@ -19,10 +19,7 @@
 
 			<div class="container">
 				<div class="carousel-caption">
-					<h1>Electronics Shop</h1>
-
-					<p>Here you can browse and buy electronics</p>
-
+					<h1>Online Store</h1>
 				</div>
 			</div>
 		</div>
@@ -33,10 +30,7 @@
 
 			<div class="container">
 				<div class="carousel-caption">
-					<h1>Electronics shop</h1>
-
-					<p></p>
-
+					<h1>Online Store</h1>
 				</div>
 			</div>
 		</div>
@@ -51,14 +45,7 @@
 </div>
 <!-- /.carousel -->
 
-
-<!-- Marketing messaging and featurettes
-================================================== -->
-<!-- Wrap the rest of the page in another container to center all the content. -->
-
 <div class="container marketing">
-
-	<!-- Three columns of text below the carousel -->
 	<div class="row">
 		<div class="col-lg-4">
 			<a class="btn btn-default"
