@@ -8,8 +8,7 @@
 		<div class="page-header">
 			<h1>Product Detail</h1>
 
-			<p class="lead">Here is the detail information of the product!
-				System.out.println(path);</p>
+			<p class="lead">Here is the detail information of the product!</p>
 		</div>
 
 		<div class="container" ng-app="cartApp">
