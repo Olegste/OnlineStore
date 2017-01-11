@@ -17,16 +17,7 @@ import com.onlinestore.model.Customer;
 import com.onlinestore.model.ShippingAddress;
 import com.onlinestore.service.CustomerService;
 
-/*This controller has a GET and a POST method, both mapped to /.
-e showForm method returns the form template.
-It includes a registerCustomer in its method signature so the template can associate form attributes with a PersonForm.
-The registerCustomerPost method accepts two arguments:
-A person object marked up with @Valid to gather the attributes filled out in the form you’re about to build.
-A bindingResult object so you can test for and retrieve validation errors.
-You can retrieve all the attributes from the form bound to the PersonForm object. 
-In the code, you test for errors, and if so, send the user back to the original form template.
-In that situation, all the error attributes are displayed.
-If all of the person’s attribute are valid, then it redirects the browser to the final results template. */
+
 
 @Controller
 
